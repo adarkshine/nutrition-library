@@ -8,14 +8,10 @@
 <script src="js/energize-min.js"></script>
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/jquery.mobile-1.4.1.js"></script>
-<script src="js/appstorage.js"></script>
-<script src="js/appstorage2.js"></script>
-<script src="js/appstorage3.js"></script>
-<script src="js/bootstrap.js"></script>
 <script type="text/javascript" src="phonegap.js"></script>
 </head>
 
-<body>
+<body onload="onBodyLoad()">
 <div data-role="page" id="home">
   <div data-role="content">
 	<div style="margin-bottom: 40px;">
@@ -26,8 +22,8 @@
 	<ul data-icon="false" data-role="listview" class id="homelist">
 		  <li><a href="#nutrition">Nutrition</a></li>
 		  <li><a href="#TaskView">Notes</a></li>
-		  <li><a href="#about">About</a></li>
-		  <li><a href="#another">another</a></li>
+		  <li><a href="index2.html">About</a></li>
+		  <li><a href="#index2">another</a></li>
 		</ul>
 	</div>
 	<center>
@@ -62,110 +58,107 @@
 	  </div>
 </div>
 
-<!--<div data-role="page" id="notes" data-theme="a"> 
+<div data-role="page" id="notes" data-theme="a"> 
 	 <div data-role="content">
 		<textarea cols="40" rows="2" name="textarea" id="textarea" placeholder="Use this text area to write notes and then save them for later viewing."></textarea>
 	 </div>
-</div>-->
+</div>
 
-				<div data-role="page" id="TaskView">
-
-					<div data-role="header" data-theme="a">
-						<a href="#AddTasks" data-role="button" class="ui-btn-right homeBtn" data-theme="c" data-icon="plus" data-transition="slideup">Add</a>
-						<h1>Tasks</h1>
-					</div>
-					<div data-role="content">
-						<ul data-role="listview" data-theme="a" id="tasks">
-							<p id="noErrors" style="display:none;">You have no tasks.</p>
-						</ul>
-					</div>
-				</div>
-
-
-				<div data-role="page" id="AddTasks">
-					
-					<div data-role="header" data-theme="a">
-					<a href="#TaskView" data-role="button" class="ui-btn-right homeBtn" data-theme="a">Tasks</a>
-						<h1>Add New Task</h1>
-					</div>
-						<div data-role="content">
-								<div class="form-area"> 
-								  <form id="tasks-form"> 
-									<input id="taskName">
-									<input type="button" value="Add" id="addTask" data-icon="plus" />
-								 </form> 	
-								</div>
-						</div>
-				</div>
-
-	<div data-role="page" id="about">
-				<div class="task-list" id="pending">
-		  <h3>Pending</h3>
-		  <!-- Sample task added manually to check look -->
-		  <div class="todo-task">
-			<div class="task-header">Sample Header</div>
-			<div class="task-date">25/06/1992</div>
-			<div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
-		  </div>
-		</div>
-		 
-		<div class="task-list" id="inProgress">
-		  <h3>In Progress</h3>
-		</div>
-		 
-		<div class="task-list" id="completed">
-		  <h3>Completed</h3>
-		</div>
-		 
-		<div class="task-list">
-		  <h3>Add a task</h3>
-		  <form id="todo-form">
-			<input type="text" placeholder="Title" />
-			<textarea placeholder="Descrtipion"></textarea>
-			<input type="text" placeholder="Due Date (dd/mm/yyyy)" />
-			<input type="button" class="btn btn-primary" value="Add Task" />
-		  </form>
-		 
-		  <input type="button" class="btn btn-primary" value="Clear Data" />
-		 
-		  <div id="delete-div">Drag Here to Delete</div>
-		</div>
-	</div>
-	
-	
-	
-	
-	   <div data-role="page" id="another"> 
-        <div data-role="header" data-position="inline" data-theme="b">
-            <a href="#" data-theme="c" data-icon="delete" iconpos="notext" data-position="inline" data-rel="dialog" id="clear">Clear</a>
-            <h1>TODO</h1>
-            <a href="#addtodo" data-icon="add" iconpos="notext" data-position="inline" data-rel="dialog">Add</a>
-        </div><p>
-        </p><div class="content-primary" style="margin:3px;">  
-            <ul data-role="listview" data-inset="true" data-split-icon="minus" data-split-theme="d" id="todo_list">
-            </ul>
-        </div> 
-        <div data-role="footer" data-position="fixed" data-theme="b" style="text-align:center;padding:5px 0px;">
-            <a href="http://www.amitpatil.me/?s=iphone+ipad" data-theme="b" data-icon="star">More iphone Apps</a>
-        </div>
+<div data-role="page" id="index2" data-theme="a">
+<div data-role="header" data-position="inline" data-theme="b">
+			<a href="#" data-theme="c" data-icon="delete" iconpos="notext" data-position="inline" data-rel="dialog" id="clear">Clear</a>
+			<h1>TODO</h1>
+			<a href="#addtodo" data-icon="add" iconpos="notext" data-position="inline" data-rel="dialog">Add</a>
+		</div><p>
+		<div class="content-primary" style="margin:3px;">	
+			<ul data-role="listview" data-inset="true" data-split-icon="minus" data-split-theme="d" id="todo_list">
+			</ul>
+		</div>	
+		<div data-role="footer" data-position="fixed" data-theme="b" style="text-align:center;padding:5px 0px;">
+			<a href="index.html" data-theme="b" data-icon="star">home</a>
+		</div> 
 		</div>
 		
-		<div data-role="page" id="addtodo"> 
-		    <div data-role="header" data-position="inline" data-theme="b">
-        <h1>Add TODO</h1>
-    </div>
-    <div data-role="content" data-theme="b">
-        <form action="">
-            <label for="textinput1">
-                TODO Text
-            </label>
-            <input id="textinput1" placeholder="Enter text here..." value="" type="text">
-            <a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b" onclick="save_todo();" data-icon="check">Submit</a>      
-            <a href="#another" data-icon="delete" data-role="button" data-rel="back" data-theme="c" data-transition="fade" data-direction="reverse" id="cancel">Cancel</a>   
-        </form>
-    </div>
-- See more at: http://www.amitpatil.me/todo-app-for-iphone-ipad-using-jquery-mobile-and-web-storage/#sthash.sfBaafa3.dpuf
-		</div>
+		
+		<script language="javascript">
+var i = localStorage.length;
+function onBodyLoad(){
+	var todo = "";
+	
+	create_new_list();
+	
+	$("#clear").click(function(){
+		localStorage.clear();
+		$("#todo_list li").fadeOut(function(){
+			$(this).html("");
+		});
+	});
+
+	$("#remove").live("click",function(e){
+		var index = $(this).closest("li").attr("id");
+		$(this).closest("li").slideUp(function(){
+		
+			// remove the selected item
+			localStorage.removeItem('names_'+index);
+			
+			// rearrange localstorage array 
+			for(i=0; i<localStorage.length; i++) {
+			  if( !localStorage.getItem("names_"+i)) {
+				localStorage.setItem("names_"+i, localStorage.getItem('names_' + (i+1) ) );
+				localStorage.removeItem('names_'+ (i+1) );
+			  }
+			}
+			
+			// clear existing list UI
+			$("#todo_list").html("");
+			
+			// create new list
+			create_new_list();
+		});
+	});
+}
+function create_new_list(){
+	for (var i = 0; i < localStorage.length; i++){
+		todo = localStorage.getItem('names_'+i);
+		$("#todo_list").append('<li id="'+i+'"><a href="#">'+todo+'</a><a href="#" data-rel="dialog" data-transition="slideup" id="remove">Remove</a></li>');
+	}	
+	// Refresh list so jquery mobile can apply iphone look to the list
+	$("#todo_list").listview();
+	$("#todo_list").listview("refresh");	
+}
+function save_todo(){
+	var todo = $("#textinput1").val();
+	if(todo.length){
+		// store item in local storage
+		localStorage['names_'+i] = todo;
+
+		// Update todo list
+		$("#todo_list").append('<li id="'+i+'"><a href="#">'+todo+'</a><a href="#" data-rel="dialog" data-transition="slideup" id="remove">Remove</a></li>');
+		
+		// Refresh list so jquery mobile can apply iphone look to the list
+		$("#todo_list").listview();
+		$("#todo_list").listview("refresh");	
+		i++;
+	}
+}
+</script>
+
+
+<div data-role="page" id="addtodo" data-theme="a">
+	<div data-role="header" data-position="inline" data-theme="b">
+		<h1>Add TODO</h1>
+	</div>
+	<div data-role="content" data-theme="b">
+		<form action="">
+			<label for="textinput1">
+				TODO Text
+			</label>
+			<input id="textinput1" placeholder="Enter text here..." value="" type="text" />
+			<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b" onClick="save_todo();" data-icon="check">Submit</a>       
+			<a href="#index2" data-icon="delete" data-role="button" data-rel="back" data-theme="c" data-transition="fade" data-direction="reverse" id="cancel">Cancel</a>    
+		</form>
+	</div>
+</div>
 				
 </body>
 </html>
