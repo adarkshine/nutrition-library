@@ -1008,8 +1008,10 @@ html body .ui-group-theme-a .ui-btn:visited,
 html head + body .ui-btn.ui-btn-a:visited {
 	background: 			#fff /*{a-bup-background-color}*/;
 	border-color:	 		#ddd /*{a-bup-border}*/;
-	color: 					#333 /*{a-bup-color}*/;
+	color: 					#b8b8b8 /*{a-bup-color}*/;
+	font-family:			"Calibri";
 	text-shadow: 0 /*{a-bup-shadow-x}*/ 1px /*{a-bup-shadow-y}*/ 0 /*{a-bup-shadow-radius}*/ #f3f3f3 /*{a-bup-shadow-color}*/;
+	
 }
 /* Button hover */
 .ui-page-theme-a .ui-btn:hover,
@@ -1019,7 +1021,7 @@ html body .ui-group-theme-a .ui-btn:hover,
 html head + body .ui-btn.ui-btn-a:hover {
 	background: 			#ededed /*{a-bhover-background-color}*/;
 	border-color:	 		#ddd /*{a-bhover-border}*/;
-	color: 					#333 /*{a-bhover-color}*/;
+	color: 					#fff /*{a-bhover-color}*/;
 	text-shadow: 0 /*{a-bhover-shadow-x}*/ 1px /*{a-bhover-shadow-y}*/ 0 /*{a-bhover-shadow-radius}*/ #f3f3f3 /*{a-bhover-shadow-color}*/;
 }
 /* Button down */
@@ -3558,7 +3560,7 @@ fieldset.ui-controlgroup {
 	margin: 0;
 	display: block;
 	position: relative;
-	text-align: left;
+	text-align: center;
 	text-overflow: ellipsis;
 	overflow: hidden;
 	white-space: nowrap;

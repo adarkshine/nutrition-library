@@ -8,27 +8,31 @@
 <script src="js/energize-min.js"></script>
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/jquery.mobile-1.4.1.js"></script>
-<script src="js/loader.js"></script>
+<script src="js/appstorage.js"></script>
+<script src="js/appstorage2.js"></script>
+<script src="js/appstorage3.js"></script>
+<script src="js/bootstrap.js"></script>
 <script type="text/javascript" src="phonegap.js"></script>
 </head>
 
 <body>
 <div data-role="page" id="home">
   <div data-role="content">
-  	<center>
-    <img src="" alt="" name="Logo" width="240" height="110" style="background-color: #FFFFFF">
-    <hr>
-    <a href="#nutrition" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true"><img src="img/nutrition2.jpg"></a>
-    <hr>
-    <img src="img/about.jpg">
-    <hr>
+	<div style="margin-bottom: 40px;">
+      <center>
+	   <img src="" alt="" name="Logo" width="240" height="110" style="background-color: #FFFFFF">
+	  </center>
+	</div>
+	<ul data-icon="false" data-role="listview" class id="homelist">
+		  <li><a href="#nutrition">Nutrition</a></li>
+		  <li><a href="#TaskView">Notes</a></li>
+		  <li><a href="#about">About</a></li>
+		  <li><a href="#another">another</a></li>
+		</ul>
+	</div>
+	<center>
   	<img src="img/Fruit_Basket_exotic.jpg" width="240" height="240">
     </center>
-	<button class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Icon (default)</button>
-<button class="show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="" data-inline="true">Icon + text</button>
-<button class="show-page-loading-msg" data-textonly="true" data-textvisible="true" data-msgtext="Text only loader" data-inline="true">Text only</button>
-<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
-	</div>
 </div>
 
 <div data-role="page" id="nutrition" data-theme="a"> 
@@ -58,5 +62,110 @@
 	  </div>
 </div>
 
+<!--<div data-role="page" id="notes" data-theme="a"> 
+	 <div data-role="content">
+		<textarea cols="40" rows="2" name="textarea" id="textarea" placeholder="Use this text area to write notes and then save them for later viewing."></textarea>
+	 </div>
+</div>-->
+
+				<div data-role="page" id="TaskView">
+
+					<div data-role="header" data-theme="a">
+						<a href="#AddTasks" data-role="button" class="ui-btn-right homeBtn" data-theme="c" data-icon="plus" data-transition="slideup">Add</a>
+						<h1>Tasks</h1>
+					</div>
+					<div data-role="content">
+						<ul data-role="listview" data-theme="a" id="tasks">
+							<p id="noErrors" style="display:none;">You have no tasks.</p>
+						</ul>
+					</div>
+				</div>
+
+
+				<div data-role="page" id="AddTasks">
+					
+					<div data-role="header" data-theme="a">
+					<a href="#TaskView" data-role="button" class="ui-btn-right homeBtn" data-theme="a">Tasks</a>
+						<h1>Add New Task</h1>
+					</div>
+						<div data-role="content">
+								<div class="form-area"> 
+								  <form id="tasks-form"> 
+									<input id="taskName">
+									<input type="button" value="Add" id="addTask" data-icon="plus" />
+								 </form> 	
+								</div>
+						</div>
+				</div>
+
+	<div data-role="page" id="about">
+				<div class="task-list" id="pending">
+		  <h3>Pending</h3>
+		  <!-- Sample task added manually to check look -->
+		  <div class="todo-task">
+			<div class="task-header">Sample Header</div>
+			<div class="task-date">25/06/1992</div>
+			<div class="task-description">Lorem Ipsum Dolor Sit Amet</div>
+		  </div>
+		</div>
+		 
+		<div class="task-list" id="inProgress">
+		  <h3>In Progress</h3>
+		</div>
+		 
+		<div class="task-list" id="completed">
+		  <h3>Completed</h3>
+		</div>
+		 
+		<div class="task-list">
+		  <h3>Add a task</h3>
+		  <form id="todo-form">
+			<input type="text" placeholder="Title" />
+			<textarea placeholder="Descrtipion"></textarea>
+			<input type="text" placeholder="Due Date (dd/mm/yyyy)" />
+			<input type="button" class="btn btn-primary" value="Add Task" />
+		  </form>
+		 
+		  <input type="button" class="btn btn-primary" value="Clear Data" />
+		 
+		  <div id="delete-div">Drag Here to Delete</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	   <div data-role="page" id="another"> 
+        <div data-role="header" data-position="inline" data-theme="b">
+            <a href="#" data-theme="c" data-icon="delete" iconpos="notext" data-position="inline" data-rel="dialog" id="clear">Clear</a>
+            <h1>TODO</h1>
+            <a href="#addtodo" data-icon="add" iconpos="notext" data-position="inline" data-rel="dialog">Add</a>
+        </div><p>
+        </p><div class="content-primary" style="margin:3px;">  
+            <ul data-role="listview" data-inset="true" data-split-icon="minus" data-split-theme="d" id="todo_list">
+            </ul>
+        </div> 
+        <div data-role="footer" data-position="fixed" data-theme="b" style="text-align:center;padding:5px 0px;">
+            <a href="http://www.amitpatil.me/?s=iphone+ipad" data-theme="b" data-icon="star">More iphone Apps</a>
+        </div>
+		</div>
+		
+		<div data-role="page" id="addtodo"> 
+		    <div data-role="header" data-position="inline" data-theme="b">
+        <h1>Add TODO</h1>
+    </div>
+    <div data-role="content" data-theme="b">
+        <form action="">
+            <label for="textinput1">
+                TODO Text
+            </label>
+            <input id="textinput1" placeholder="Enter text here..." value="" type="text">
+            <a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b" onclick="save_todo();" data-icon="check">Submit</a>      
+            <a href="#another" data-icon="delete" data-role="button" data-rel="back" data-theme="c" data-transition="fade" data-direction="reverse" id="cancel">Cancel</a>   
+        </form>
+    </div>
+- See more at: http://www.amitpatil.me/todo-app-for-iphone-ipad-using-jquery-mobile-and-web-storage/#sthash.sfBaafa3.dpuf
+		</div>
+				
 </body>
 </html>
