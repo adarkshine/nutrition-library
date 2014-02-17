@@ -5,16 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nutrition Library</title>
 <link rel="stylesheet" href="css/jquery.mobile-1.4.1.css" />
-<script src="js/energize-min.js"></script>
+<script src="js/energize-min.js"></script>									<!--speeds up clicking events-->
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/jquery.mobile-1.4.1.js"></script>
-<script src="js/appstorage.js"></script>
-<script type="text/javascript" src="js/cordova.js"></script>
-
-
-<link href="jquery.zrssfeed.css" rel="stylesheet" type="text/css" />
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<script src="jquery.zrssfeed.min.js" type="text/javascript"></script>
+<<!--<script type="text/javascript" src="js/cordova.js"></script>				<!--required for phonegap-->
+<link href="js/jquery.zrssfeed.css" rel="stylesheet" type="text/css" />		<!--live feed style-->
+<script src="js/jquery.zrssfeed.min.js" type="text/javascript"></script>	<!--live feed feature-->
 
 </head>
 
@@ -28,10 +24,9 @@
 	</div>
 	<ul data-icon="false" data-role="listview" class id="homelist">
 		  <li><a href="#nutrition">Nutrition</a></li>
-		  <li><a href="#TaskView">Notes</a></li>
-		  <li><a href="#rss" data-ajax="false">About</a></li>
-		  <li><a href="#index2">another</a></li>
-		  <li><a data-ajax="false" href="other/ntd.html">bla</a></li>
+		  <li><a href="other/notes.html" data-ajax="false">Notes</a></li>
+		  <li><a href="#rss" data-ajax="false">Live</a></li>
+		  <li><a href="#">About</a></li>
 		</ul>
 	</div>
 	<center>
@@ -42,69 +37,34 @@
 <div data-role="page" id="nutrition" data-theme="a"> 
 	 <div data-role="content">
 		<ul data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="FIND/FILTER" >
-		  <li><a href="#">Apples</a></li>
-		  <li><a href="#">Almonds</a></li>
-		  <li><a href="#">Bananas</a></li>
-		  <li><a href="#">Broccoli</a></li>
-		  <li><a href="#">Cauliflower</a></li>
-		  <li><a href="#">Cherries</a></li>
-		  <li><a href="#">Chicken</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
-		  <li><a href="#">test</a></li>
+		  <li data-icon="false"><a href="#">Almonds</a></li>
+		  <li data-icon="false"><a href="#apples">Apples</a></li>
+		  <li data-icon="false"><a href="#">Bananas</a></li>
+		  <li data-icon="false"><a href="#">Beef</a></li>
+		  <li data-icon="false"><a href="#">Blueberries</a></li>
+		  <li data-icon="false"><a href="#">Broccoli</a></li>
+		  <li data-icon="false"><a href="#">Cauliflower</a></li>
+		  <li data-icon="false"><a href="#">Cherries</a></li>
+		  <li data-icon="false"><a href="#">Chicken</a></li>
+		  <li data-icon="false"><a href="#">Lettuce</a></li>
+		  <li data-icon="false"><a href="#">Milk</a></li>
+		  <li data-icon="false"><a href="#">Peanuts</a></li>
+		  <li data-icon="false"><a href="#">Potatoes</a></li>
+		  <li data-icon="false"><a href="#">Rice</a></li>
+		  <li data-icon="false"><a href="#">Salmon</a></li>
+		  <li data-icon="false"><a href="#">Strawberries</a></li>
+		  <li data-icon="false"><a href="#">Tomatoes</a></li>
+		  <li data-icon="false"><a href="#">Tuna</a></li>
+		  <li data-icon="false"><a href="#">Water</a></li>
 		</ul>
 	  </div>
 	  <div data-role="footer" data-position="fixed">
-		<center><a data-rel="back" class="ui-btn ui-btn-icon-left">Back</a></center>
+	  <center><a href="index.html" data-role="button"> Home </a></center>
 	  </div>
 </div>
 
-<div data-role="page" id="notes" data-theme="a"> 
-	 <div data-role="content">
-		<textarea cols="40" rows="2" name="textarea" id="textarea" placeholder="Use this text area to write notes and then save them for later viewing."></textarea>
-	 </div>
-</div>
-
-<div data-role="page" id="index2" data-theme="a">
-<div data-role="header" data-position="inline" data-theme="b">
-			<a href="#" data-theme="c" data-icon="delete" iconpos="notext" data-position="inline" data-rel="dialog" id="clear">Clear</a>
-			<h1>TODO</h1>
-			<a href="#addtodo" data-icon="add" iconpos="notext" data-position="inline" data-rel="dialog">Add</a>
-		</div><p>
-		<div class="content-primary" style="margin:3px;">	
-			<ul data-role="listview" data-inset="true" data-split-icon="minus" data-split-theme="d" id="todo_list">
-			</ul>
-		</div>	
-		<div data-role="footer" data-position="fixed" data-theme="b" style="text-align:center;padding:5px 0px;">
-			<a href="index.html" data-theme="b" data-icon="star">home</a>
-		</div> 
-		</div>
-		
-		
 
 
-<div data-role="page" id="addtodo" data-theme="a">
-	<div data-role="header" data-position="inline" data-theme="b">
-		<h1>Add TODO</h1>
-	</div>
-	<div data-role="content" data-theme="b">
-		<form action="">
-			<label for="textinput1">
-				TODO Text
-			</label>
-			<input id="textinput1" placeholder="Enter text here..." value="" type="text" />
-			<a href="docs-dialogs.html" data-role="button" data-rel="back" data-theme="b" onClick="save_todo();" data-icon="check">Submit</a>       
-			<a href="#index2" data-icon="delete" data-role="button" data-rel="back" data-theme="c" data-transition="fade" data-direction="reverse" id="cancel">Cancel</a>    
-		</form>
-	</div>
-</div>
 
 <div data-role="page" id="rss">
 
@@ -134,11 +94,36 @@ $(document).ready(function () {
 </div>
 
 
-<div data-role="page" id="bla" data-theme="a">
+<!-->-------------------------Nutrition is past here----------------------------------------------->
 
-<input type="submit" value="Click" />
 
-</div>
+<div data-role="page" id="apples"> 
+  <center>
+  	<img src="img/apples.jpg">
+  </center>
+  <div data-role="collapsible" data-icon="false">
+	<h4>About</h4>
+	<center><img src="img/apple_f.jpg"></center>
+	<font size="2"><p><b>History.</b> Apples originated in the Middle East more than 4000 years ago. The center of diversity of the genus Malus is in eastern Turkey. The apple tree was perhaps the earliest tree to be cultivated,and its fruits have been improved through selection over thousands of years. Alexander the Great is credited with finding dwarfed apples in Kazakhstan in Asia in 328 BCE.</p>
+	<p><b>Structure.</b> The apple forms a tree that is small and deciduous, generally standing 1.8 to 4.6 m (6 to 15 ft) tall in cultivation and up to 9.1 m (30 ft) in the wild. When cultivated, the size, shape and branch density is determined by rootstock selection and trimming method. The leaves are alternately arranged dark green-coloured simple ovals with serrated margins and slightly downy undersides.</p>
+	<p>Blossoms are produced in spring simultaneously with the budding of the leaves, and are produced on spurs and some long shoots. The 3 to 4 cm (1.2 to 1.6 in) flowers are white with a pink tinge that gradually fades, five petalled, with an inflorescence consisting of a cyme with 4–6 flowers. The central flower of the inflorescence is called the "king bloom"; it opens first, and can develop a larger fruit.</p>
+	<p>The fruit matures in autumn, and varieties exist with a wide range of sizes. Commercial growers aim to produce an apple that is 7.0 to 8.3 cm (2.75 to 3.25 in) in diameter, due to market preference. Some consumers, especially those in Japan, prefer a larger apple, while apples below 5.7 cm (2.25 in) are generally used for making juice and have little fresh market value. The skin of ripe apples is generally red, yellow, green or pink, although many bi- or tri-colored varieties may be found.</p>
+	</font>
+  </div>
+  <div data-role="collapsible">
+	<h4>Physical Health</h4>
+	<p><b>Heart disease.</b> Low doses of flavonoid in the diet lower the risk of heart disease. Consuming quercetin-rich foods, including apple peel, may help prevent chronic inflammation, which could lead to cardiovascular disease, by the action of quercetin on the cells lining the blood vessels.</p>
+	<p><b>Lungs.</b> Apples, eaten raw with the skin, contain the vitamins C and E and also the compound beta- carotene, which contributes to the colour of the apple skin. These compounds are also found in other citrus fruits such as lemons and oranges. A study conducted in 2000 showed there was a positive correlation between lung function and the number of apples eaten per week. Eating five or more apples a week was linked to better lung function, but the paper also suggested that the number of apples consumed may simply reflect a healthier lifestyle.</p>
+	<p>Some research suggests that quercetin can protect the lungs from atmospheric pollutants such as cigarette smoke by reducing the number of harmful free radicals found in such chemicals that can damage the exposed inside tissue. Researchers in Australia also showed apple consumption may have a role in lowering the risk of asthma in adults (28 - 42 years of age).</p>
+  </div>
+  <div data-role="collapsible">
+	<h4>Mind</h4>
+	<p><b>Memory.</b> Mice fed concentrated apple juice (equivalent of 2-3 cups of apple juice per day) performed better when placed in a maze and their brains had less oxidative damage. This could be due to the number and amount of antioxidants found in apple juice, preventing oxidative damage caused by free radicals. The oxidative stress was also reduced in mice that had a poor diet but were still fed the apple juice. In humans, higher intake of vegetables and fruit, such as apples, has been shown to reduce the risk of degenerate conditions such as Alzheimer’s.</p>
+  </div>
+
+<div>
+
+
 				
 </body>
 </html>

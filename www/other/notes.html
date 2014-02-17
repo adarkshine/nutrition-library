@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.css">
-<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.0.1/jquery.mobile-1.0.1.min.js"></script>
-<link rel="stylesheet" href="/static/tutorials/ntd/jquery.mobile-1.0.1.custom.css?" />
+<link rel="stylesheet" href="jquery.mobile-1.0.1.css">
+<script src="jquery-1.6.4.min.js"></script>
+<script src="jquery.mobile-1.0.1.min.js"></script>
+<link rel="stylesheet" src="jquery.mobile-1.0.1.custom.css" />
 <script>
 var ntd = {};
 /** Read the new task and add it to the list */
@@ -35,7 +35,7 @@ ntd.refresh_list = function() {
     $tasks.empty();
     if (ntd.list.length) {
         // Add the header
-        $tasks.append('<li data-role="list-divider">Not To Do&#39;s</li>');
+        $tasks.append('<li data-role="list-divider">Notes</li>');
         for (var i=0;i<ntd.list.length;i++){
             // Append each task
             var li = '<li><a data-rel="dialog" data-task="' + i
@@ -44,7 +44,7 @@ ntd.refresh_list = function() {
         }
     }
     // Add the header for addition of new tasks
-    $tasks.append('<li data-role="list-divider">Add a task</li>');
+    $tasks.append('<li data-role="list-divider">New note?</li>');
     // Use jQuery Mobile's listview method to refresh
     $tasks.listview('refresh');
     // Store back the list
@@ -63,7 +63,7 @@ $(document).delegate('#index','pageinit', function() {
     $('li a').live('vclick', function() {
         ntd.selected = $(this).data('task');
     });
-    // Refresh the list everytime the page is reloaded
+    // Refresh the list every time the page is reloaded
     $('#index').bind('pagebeforeshow', ntd.refresh_list);
 });
 
@@ -72,7 +72,7 @@ $(document).delegate('#confirm', 'pageinit', function(){
     $('.remove_task').bind('vclick', ntd.remove);
 });
 
-// Make the transition in reverse for the buttons on the done and notdone pages
+// Make the transition in reverse for the buttons on the done page
 $(document).delegate('#done, #notdone', 'pageinit', function(){
     // We reverse transition for any button linking to index page
     $('[href="#index"]').attr('data-direction','reverse');
@@ -82,65 +82,45 @@ $(document).delegate('#done, #notdone', 'pageinit', function(){
 <body>
 
 <div id="index" data-url="index" data-role="page">
-<div data-role="header">
-<h1>Not To Do</h1>
-</div>
+
 
 <div data-role="content">
 
 <ul id="task_list" data-role="listview">
-<li data-role="list-divider">Not To Do&#39;s</li>
-<li><a href="#confirm">Be Evil</a></li>
-<li><a href="#confirm">Put a leash on the cat</a></li>
-<li><a href="#confirm">Make a to-do app</a></li>
 <li data-role="list-divider">Add a task</li>
 </ul>
-
+<br>
 <form id="form_336" method="GET">
 
-<div data-role="fieldcontain">
+<div data-role="fieldcontain" placeholder="Add something interesting...">
 <label for="inp_337"></label>
 <input type="text" name="inp_337" id="inp_337" />
 </div>
 
-<input id="add" type="button" data-icon="plus" value="Add"/>
+<input id="add" type="button" value="Add"/>
 </form>
 
+<a href="../index.html" data-role="button" data-ajax="false">Home</a>
 </div></div>
 
 <div id="confirm" data-url="confirm" data-role="page">
 <div data-role="header">
-<h1>Finish Task</h1>
+
 </div>
 
 <div data-role="content">
-Mark this task as<br>
-<a class="remove_task" href="#done" data-role="button" data-icon="delete" data-theme="f">Done</a>
-<a class="remove_task" href="#notdone" data-role="button" data-icon="check" data-theme="g">Not Done</a>
-<br><br>
-<a href="#index" data-role="button" data-icon="minus">Cancel</a>
+<a class="remove_task" href="#delete" data-role="button">Delete</a>
+<a href="#index" data-role="button">Cancel</a>
 
 </div></div>
 
-<div id="done" data-url="done" data-role="page">
+<div id="done" data-url="delete" data-role="page">
 <div data-role="header">
-<h1>OMG! No</h1>
+<h1>Deleted</h1>
 </div>
 
 <div data-role="content">
-I'm very disappointed<br><br>
-<a href="#index" data-role="button">Whatever</a>
-
-</div></div>
-
-<div id="notdone" data-url="notdone" data-role="page">
-<div data-role="header">
-<h1>Good Job</h1>
-</div>
-
-<div data-role="content">
-I'm proud of you<br><br>
-<a href="#index" data-role="button">Whatever</a>
+<a href="#index" data-role="button">Return</a>
 
 </div></div>
 
