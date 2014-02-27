@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nutrition Library</title>
 <link rel="stylesheet" href="css/jquery.mobile-1.4.1.css" />
-<!--script src="js/energize-min.js"></script>									<!--speeds up clicking events-->
 <script src="js/jquery-2.1.0.js"></script>
 <script src="js/jquery.mobile-1.4.1.js"></script>
-<link href="js/jquery.zrssfeed.css" rel="stylesheet" type="text/css" />		<!--live feed style-->
+<link href="css/jquery.zrssfeed.css" rel="stylesheet" type="text/css" />	<!--live feed style-->
 <script src="js/jquery.zrssfeed.min.js" type="text/javascript"></script>	<!--live feed feature-->
 
 </head>
@@ -18,14 +17,14 @@
   <div data-role="content">
 	<div style="margin-bottom: 40px;">
       <center>
-	   <img src="" alt="" name="Logo" width="240" height="110" style="background-color: #FFFFFF">
+	   <img src="img/Logo.jpg" alt="" name="Logo" width="240" height="110" style="background-color: #FFFFFF">
 	  </center>
 	</div>
 	<ul data-icon="false" data-role="listview" class id="homelist">
-		  <li><a href="#nutrition"  data-transition="none" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Nutrition</a></li>
-		  <li><a href="other/notes.html" data-transition="flip" data-ajax="false">Notes</a></li>
-		  <li><a href="#rss" data-ajax="false" data-transition="turn">Live</a></li>
-		  <li><a href="#">About</a></li>
+		  <li><a href="#nutrition" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Nutrition</a></li>
+		  <li><a href="other/notes.html" data-ajax="false">Notes</a></li>
+		  <li><a href="#rss" data-ajax="false">Live</a></li>
+		  <li><a href="#about">About</a></li>
 		</ul>
 	</div>
 	<center>
@@ -67,29 +66,57 @@
 
 <div data-role="page" id="rss">
 
-<title>zRSSFeed - Basic RSS feed example</title>
-
 <script type="text/javascript">
-$(document).ready(function () {
-	$('#test').rssfeed('http://feeds.reuters.com/reuters/oddlyEnoughNews');
+$(document).ready(function() {
+
+	setRSSFeed('#menu');	
+
+	$('#menu').change(function() {
+		setRSSFeed(this);
+	});
+
+	function setRSSFeed(obj) {
+		var feedurl = $('option:selected', obj).val();
+		
+		if (feedurl) {
+			$('#test').rssfeed(feedurl, {
+			header:false,
+			snippet:false,
+			media:true
+			});
+		}
+	}
 });
 </script>
 
 
-<h1>zRSSFeed - Basic RSS feed example</h1>
-<p>Simple as it gets. This example uses the default options to display a feed.</p>
+<font size="2" font color="b8b8b8">Select a feed from the list below:</font>
+<select id="menu">
+	<option value="http://www.sciencedaily.com/rss/health_medicine/nutrition.xml">Science Daily: Nutrition [Basic]</option>
+	<option value="http://www.eatright.org/RSS/feed.aspx?feed=news">Academy of Nutrition and Dietetics [Advanced]</option>
+	<option value="http://jn.nutrition.org/rss/current.xml">The Journal of Nutrition [Expert]</option>
+</select>
 
-<h4>Script</h4>
-<pre>
-$(document).ready(function () {
-	$('#test').rssfeed('http://feeds.reuters.com/reuters/oddlyEnoughNews');
-});
-</pre>
 
-<h4>Result</h4>
 <div id="test"></div>
 
+<div data-role="footer" data-position="fixed">
+ <center><a href="index.html" data-role="button"> Home </a></center>
+</div>
 
+</div>
+
+
+
+<div data-role="page" id="about" data-theme="a"> 
+	 <div data-role="content">
+		<center><font size="2" font color="b8b8b8">Version 0.15:<p>-Added logo;<p>-Added About page;<p>-Updated Live page;<p></center>
+		Author - Igor Barclay. Made as a part of a University project. 2013-2014.<p></font>
+		<img src="img/pixel_banana.jpg"></p>
+	  </div>
+	  <div data-role="footer" data-position="fixed">
+	  <center><a href="index.html" data-role="button"> Home </a></center>
+	  </div>
 </div>
 
 

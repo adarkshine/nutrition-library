@@ -9,13 +9,13 @@
 
 body {
 	margin: 1em 3em;
-	font-family: Tahoma, Genevam, sans-serif;
+	font-family: Calibri, Tahoma, Genevam, sans-serif;
 }
 
 .rssFeed {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Calibri, Arial, Helvetica, sans-serif;
 	font-size: 90%;
-	margin: 2em 3em;
+	margin: 2em 2em;
 }
 .rssFeed a {
 	color: #444;
@@ -43,8 +43,8 @@ body {
 	margin: 0.2em 0 0.4em 0;
 }
 
-.odd { background-color: #e8e8fc; }
-.even { background-color: #d4d4e8; }
+.odd { background-color: #ffffff; }
+.even { background-color: #ffe4e1; }
 
 .rssRow .rssMedia {
 	padding: 0.5em;
