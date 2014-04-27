@@ -35,9 +35,9 @@
 <div data-role="page" id="nutrition" data-theme="a"> 
 	 <div data-role="content">
 		<ul data-inset="true" data-role="listview" data-filter="true" data-filter-placeholder="FIND/FILTER" >
-		  <li data-icon="false"><a href="#">Almonds</a></li>
+		  <li data-icon="false"><a href="#almonds">Almonds</a></li>
 		  <li data-icon="false"><a href="#apples">Apples</a></li>
-		  <li data-icon="false"><a href="#">Bananas</a></li>
+		  <li data-icon="false"><a href="#bananas">Bananas</a></li>
 		  <li data-icon="false"><a href="#">Beef</a></li>
 		  <li data-icon="false"><a href="#">Blueberries</a></li>
 		  <li data-icon="false"><a href="#">Broccoli</a></li>
@@ -81,8 +81,7 @@ $(document).ready(function() {
 		if (feedurl) {
 			$('#test').rssfeed(feedurl, {
 			header:false,
-			snippet:false,
-			media:true
+			snippet:false
 			});
 		}
 	}
@@ -110,7 +109,7 @@ $(document).ready(function() {
 
 <div data-role="page" id="about" data-theme="a"> 
 	 <div data-role="content">
-		<center><font size="2" font color="b8b8b8">Version 0.15:<p>-Added logo;<p>-Added About page;<p>-Updated Live page;<p></center>
+		<center><font size="2" font color="b8b8b8">Version 0.16:<p>-Added almonds facts/page;<p>-Added bananas facts/page;</center>
 		Author - Igor Barclay. Made as a part of a University project. 2013-2014.<p></font>
 		<img src="img/pixel_banana.jpg"></p>
 	  </div>
@@ -149,6 +148,66 @@ $(document).ready(function() {
   </div>
  </div>
   
-				
+ <div data-role="page" id="almonds"> 
+  <center>
+  	<img src="img/almonds.jpg">
+  </center>
+  <div data-role="collapsible" data-icon="false">
+	<h4>About</h4>
+	<center><img src="img/almond_f.jpg"></center>
+	<font size="2"><p><b>History.</b> The almond is native to the Mediterranean climate region of the Middle East, eastward as far as the Indus. In India, it is known as badam. It was spread by humans in ancient times along the shores of the Mediterranean into northern Africa and southern Europe.</p>
+	<p><b>Structure.</b> The almond is a deciduous tree, growing 4–10 m (13–33 ft) in height, with a trunk of up to 30 cm (12 in) in diameter. The young twigs are green at first, becoming purplish where exposed to sunlight, then grey in their second year. The leaves are 3–5 inches long, with a serrated margin and a 2.5 cm (1 in) petiole. The flowers are white to pale pink, 3–5 cm (1–2 in) diameter with five petals, produced singly or in pairs and appearing before the leaves in early spring.</p>
+	<p>The almond fruit measures 3.5–6 cm (1–2 in) long. In botanical terms, it is not a nut, but a drupe. The outer covering or exocarp, fleshy in other members of Prunus such as the plum and cherry, is instead a thick, leathery, grey-green coat (with a downy exterior), called the hull. Inside the hull is a reticulated, hard, woody shell (like the outside of a peach pit) called the endocarp. Inside the shell is the edible seed, commonly called a nut. Generally, one seed is present, but occasionally two occur.</p>
+	<p>Almonds begin bearing an economic crop in the third year after planting. Trees reach full bearing five to six years after planting. The fruit matures in the autumn, 7–8 months after flowering.</p>
+	</font>
+  </div>
+  <div data-role="collapsible">
+	<h4>Physical Health</h4>
+	<font size="2"><p><b>Heart disease.</b> Almonds are high in monounsaturated fats, the same type of health-promoting fats as are found in olive oil, which have been associated with reduced risk of heart disease. Five large human epidemiological studies found that their consumption is linked to a lower risk for heart disease. Researchers who studied data from the Nurses Health Study estimated that substituting nuts for an equivalent amount of carbohydrate in an average diet resulted in a 30% reduction in heart disease risk. Researchers calculated even more impressive risk reduction—45%—when fat from nuts was substituted for saturated fats (found primarily found in meat and dairy products).</p>
+	<p><b>LDL-Cholesterol.</b> In the study of 12 patients with elevated LDL cholesterol levels, a diet containing almonds and other nuts, plant sterols (also found in nuts), soy protein, and soluble fiber (in high amounts in beans, oats, pears) reduced blood levels of all LDL fractions including small dense LDL (the type that most increases risk for cardiovascular disease) with near maximal reductions seen after only 2 weeks.</p></font>
+  </div>
+  <div data-role="collapsible">
+	<h4>Mind</h4>
+	<font size="2">
+	<p><b>Energy.</b> Almonds are a very good source of manganese and copper, two trace minerals that are essential cofactors of a key oxidative enzyme called superoxide dismutase. Superoxide dismutase disarms free radicals produced within the mitochondria (the energy production factories within our cells), thus keeping our energy flowing. Riboflavin (vitamin B2) also plays at least two important roles in the body's energy production. When active in energy production pathways, riboflavin takes the form of flavin adenine dinucleotide (FAD) or flavin mononucleotide (FMN). In these forms, riboflavin attaches to protein enzymes called flavoproteins that allow oxygen-based energy production to occur.</p></font>
+  </div>
+  <div data-role="footer" data-position="fixed">
+  <center><a href="index.html" data-role="button"> Home </a></center>
+  </div>
+ </div>
+			
+
+ <div data-role="page" id="bananas"> 
+  <center>
+  	<img src="img/bananas.jpg">
+  </center>
+  <div data-role="collapsible" data-icon="false">
+	<h4>About</h4>
+	<center><img src="img/banana_f.jpg"></center>
+	<font size="2"><p><b>History.</b> Farmers in Southeast Asia and Papua New Guinea first domesticated bananas. Recent archaeological and palaeoenvironmental evidence at Kuk Swamp in the Western Highlands Province of Papua New Guinea suggests that banana cultivation there goes back to at least 5000 BCE, and possibly to 8000 BCE. It is likely that other species were later and independently domesticated elsewhere in Southeast Asia. Southeast Asia is the region of primary diversity of the banana. Areas of secondary diversity are found in Africa, indicating a long history of banana cultivation in the region.</p>
+	<p><b>Structure.</b> The banana plant is the largest herbaceous flowering plant. All the above-ground parts of a banana plant grow from a structure usually called a "corm". Plants are normally tall and fairly sturdy, and are often mistaken for trees, but what appears to be a trunk is actually a "false stem" or pseudostem. Bananas grow in a wide variety of soils, as long as the soil is at least 60 cm deep, has good drainage and is not compacted. The leaves of banana plants are composed of a "stalk" (petiole) and a blade (lamina). The base of the petiole widens to form a sheath; the tightly packed sheaths make up the pseudostem, which is all that supports the plant. The edges of the sheath meet when it is first produced, making it tubular. As new growth occurs in the centre of the pseudostem the edges are forced apart. Cultivated banana plants vary in height depending on the variety and growing conditions. Most are around 5 m (16 ft) tall, with a range from 'Dwarf Cavendish' plants at around 3 m (10 ft) to 'Gros Michel' at 7 m (23 ft) or more. Leaves are spirally arranged and may grow 2.7 metres (8.9 ft) long and 60 cm (2.0 ft) wide. They are easily torn by the wind, resulting in the familiar frond look.</p>
+	<p>The banana fruits develop from the banana heart, in a large hanging cluster, made up of tiers (called "hands"), with up to 20 fruit to a tier. The hanging cluster is known as a bunch, comprising 3–20 tiers, or commercially as a "banana stem", and can weigh from 30–50 kilograms (66–110 lb). Individual banana fruits (commonly known as a banana or "finger") average 125 grams (0.276 lb), of which approximately 75% is water and 25% dry matter.</p>
+	<p>The fruit has been described as a "leathery berry". There is a protective outer layer (a peel or skin) with numerous long, thin strings (the phloem bundles), which run lengthwise between the skin and the edible inner portion. The inner part of the common yellow dessert variety splits easily lengthwise into three sections that correspond to the inner portions of the three carpels.[citation needed] In cultivated varieties, the seeds are diminished nearly to non-existence; their remnants are tiny black specks in the interior of the fruit.</p>
+	</font>
+  </div>
+  <div data-role="collapsible">
+	<h4>Physical Health</h4>
+	<font size="2"><p><b>Heart disease.</b> Bananas are one of our best sources of potassium, an essential mineral for maintaining normal blood pressure and heart function. Since the average banana contains 400-plus mg of potassium and only 1 mg of sodium, a banana a day may help to prevent high blood pressure and protect against atherosclerosis. A study published in the Archives of Internal Medicine also confirms that eating high fiber foods, such as bananas, helps prevent heart disease. Almost 10,000 American adults participated in this study and were followed for 19 years. People eating the most fiber, 21 grams per day, had 12% less coronary heart disease (CHD) and 11% less cardiovascular disease (CVD) compared to those eating the least, 5 grams daily. Those eating the most water-soluble dietary fiber fared even better with a 15% reduction in risk of CHD and a 10% risk reduction in CVD.</p>
+	<p><b>Eyesight.</b> Data reported in a study published in the Archives of Ophthalmology indicates that eating 3 or more servings of fruit per day may lower your risk of age-related macular degeneration (ARMD), the primary cause of vision loss in older adults, by 36%, compared to persons who consume less than 1.5 servings of fruit daily. In this study, which involved over over 100,000 women and men, researchers evaluated the effect of study participants' consumption of fruits; vegetables; the antioxidant vitamins A, C, and E; and carotenoids on the development of early ARMD or neovascular ARMD, a more severe form of the illness associated with vision loss. Food intake information was collected periodically for up to 18 years for women and 12 years for men.</p>
+	<p><b>Bones.</b> Bananas are an exceptionally rich source of fructooligosaccharide, a compound called a prebiotic because it nourishes probiotic (friendly) bacteria in the colon. These beneficial bacteria produce vitamins and digestive enzymes that improve our ability to absorb nutrients, plus compounds that protect us against unfriendly microorganisms. When fructooligosaccharides are fermented by these friendly bacteria, not only do numbers of probiotic bacteria increase, but so does the body's ability to absorb calcium. In addition, gastrointestinal transit time is lessened, decreasing the risk of colon cancer.</p>
+	<p><b>Kidneys.</b> Research published in the International Journal of Cancer suggests that regular, moderated consumption of whole fruits and vegetables, especially bananas, can be protective. The results of this large population based prospective study (13.4 years) of 61,000 women aged 40-76, show that women eating more than 75 servings of fruits and vegetables per month (which translates into 2.5 per day) cut their risk of kidney cancer 40%. Among the fruits, bananas were especially protective. Women eating bananas four to six times a week halved their risk of developing the disease compared to those who did not eat this fruit.</p></font>
+  </div>
+  <div data-role="collapsible">
+	<h4>Mind</h4>
+	<font size="2">
+	<p><b>Focus.</b> Bananas are an excellent source of potassium, which helps deliver oxygen to the brain to keep your mind sharp. The magnesium in bananas promotes proper electrical activity between nerve cells in the brain. Magnesium also helps the brain dispose of the waste byproduct of protein metabolism, ammonia. By reducing the brain’s ammonia levels, magnesium improves your ability to focus, according to The Franklin Institute. Moreover, according to the Linus Pauling Institute, some research suggests that the B-6 in bananas may help prevent age-related cognitive declines in memory.</p>
+	<p><b>Sleep aid.</b> Bananas are an excellent source of magnesium and potassium, which help to relax overstressed muscles. They also contain tryptophan, which convert to serotonin and melatonin, the brain’s key calming hormones. They’re also carbs which will help make you sleepy as well.</p></font>
+  </div>
+  <div data-role="footer" data-position="fixed">
+  <center><a href="index.html" data-role="button"> Home </a></center>
+  </div>
+ </div>			
+			
+			
 </body>
 </html>
